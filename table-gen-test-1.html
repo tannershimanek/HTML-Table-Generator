@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Playground</title>
+        <script src="./table-gen.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    
+    <body>
+
+
+        <input type="number" min="0" max="10" id="cols" placeholder="columns" onchange="createColumns(this)">
+        <input type="number" min="0" id="rows" placeholder="rows" onchange="createRows(this)"/>
+
+        <br /><br />
+
+        <div id="content"></div>
+
+        <button onclick="buildTable(this)">build table</button>
+
+        <p id=table></p>
+
+        <h1>Table Code</h1>
+
+        <pre>
+            <code >
+                <xmp id="table-code"></xmp>
+            </code>
+        </pre>
+
+
+    
+    </body>
+</html>
+
+
+
+
+<!-- 10 ER Points
+Christmas Spirit
+Peace & Calming
+Myrrh
+Eqyptian Gold
+Diffuser Ornament
+Sacred Frankincense -->
+

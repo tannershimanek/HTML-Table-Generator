@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #cccccc;
+    padding: 10px;
+}
+th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#content {
+    display: flex;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
