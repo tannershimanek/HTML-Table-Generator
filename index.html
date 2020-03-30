@@ -2,27 +2,37 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Playground</title>
+        <title>Table Generator</title>
         <script src="./table-gen.js"></script>
         <link rel="stylesheet" href="style.css">
     </head>
     
     
     <body>
-
+        <h1>HTML Table Generator</h1>
+        <div class="indent">
+            <p><strong>V.1.0.0</strong></p>
+            <ul>
+                <li>As of right now, do not build tables smaller than 2x3 or 3x2.</li>
+                <li>For blank spaces add a space to ensure the table formats properly.</li>
+            </ul>
+        </div>
 
         <input type="number" min="0" max="10" id="cols" placeholder="columns" onchange="createColumns(this)">
         <input type="number" min="0" id="rows" placeholder="rows" onchange="createRows(this)"/>
 
-        <br /><br />
+        <br><br>
 
         <div id="content"></div>
 
+        <br>
         <button onclick="buildTable(this)">build table</button>
 
         <p id=table></p>
 
+        <br>
         <h1>Table Code</h1>
+        <hr>
 
         <pre>
             <code >

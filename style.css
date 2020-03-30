@@ -1,11 +1,19 @@
 body {
     margin: 0;
+    font-family: arial, sans-serif;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+}
+
+thead {
+    color: #ffffff;
+    background-color: #96c5f1;
 }
 
 td, th {
@@ -41,3 +49,13 @@ tr:nth-child(even) {
     width: 100%;
 }
 
+.indent {
+    margin-left: 1rem;
+}
+
+button {
+    background-color: #dddddd;
+    border: solid .5px #cccccc;
+    border-radius: 2px;
+    padding: 8px;
+}
