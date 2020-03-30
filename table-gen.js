@@ -13,7 +13,7 @@ function createColumns(input) {
     for (let i = 0; i < cols; i++) {
         colsArray.push(`
             <div class="column" id="col${i}">
-                <input id="header${i}"type="string" onchange="updateColumnData(${i}, this)" />
+                <input class="header" id="header${i}"type="string" onchange="updateColumnData(${i}, this)" />
                 <div class="col-content" id="col-content${i}"></div>
             </div>
         `);
@@ -46,13 +46,13 @@ function createRows(input) {
 
 function updateRowData(col, row, input) {
     data[col].rows[row] = input.value;
-    console.log(data)
+    // console.log(data)
 };
 
 
 function updateColumnData(col, input) {
     data[col].header = input.value;
-    console.log(data)
+    // console.log(data)
 };
 
 
@@ -60,19 +60,19 @@ function buildTable() {
     let header = [];
     let rows = [];
 
+    // builds table header
     for (let i = 0; i < data.length; i++) {
         let th = `<th> ${data[i].header} </th>`
         header.push(th)
 
+        // builds rows
         for (let j = 0; j < data[i].rows.length; j++) {
-            let td = `<td> ${data[i].rows[j]} </td>`
+            let td = `<td> ${j}-${data[i].rows[j]} </td>`
             rows.push(td)
         };
     };
-    console.log(rows)
 
-
-
+    let sortedRows = rows.sort()
     let init = rows.length + header.length
 
     for (let x = 1; x < (rows.length / header.length); x++) {
@@ -85,9 +85,10 @@ function buildTable() {
         }
     }
 
-
+    
     let headerStr = header.toString()
-    let rowsStr = rows.toString()
+    let rowsStr = sortedRows.toString()
+    rowsStr = rowsStr.replace(/[0-9][-]/gi, '')
 
     let buildTable = `
 <table class="table table-bordered">
@@ -102,7 +103,6 @@ ${rowsStr.replace(/,/g, '\n')}\n
 </tbody>
 </table>`
 
-    console.log(buildTable)
 
     let newTable = document.querySelector('#table');
     newTable.innerHTML = buildTable;
