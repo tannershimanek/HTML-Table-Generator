@@ -92,7 +92,7 @@ function buildTable() {
 
     let buildTable = `
 <table class="table table-bordered">
-<thead class="bg-primary">\n
+<thead class="bg-primary text-white">\n
 <tr>
 ${headerStr.replace(/,/g, '\n')}
 </tr>\n
